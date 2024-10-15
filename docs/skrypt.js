@@ -83,7 +83,7 @@ $(document).keyup(function(event){
 })
 $(window).on("touchstart",function(event){
     var code
-        var touch = e.touches[e.touches.length-1]
+        var touch = event.touches[event.touches.length-1]
         alert(touch.clientY)
         if (touch.clientX < window.innerWidth/2){
             if(touch.clientY < window.innerHeight/2){
