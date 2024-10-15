@@ -149,30 +149,30 @@ $(window).on("touchmove",function(event){
         key[code] = true
     }
 })
-// $(document).ontouchcancel(function(event){
-//     var code
-//     for(var i in keys){
-//         keys[i] = false
-//     }
-//     for(i = 0; i < event.touches.length; i++){
-//         var touch = e.touches[i]
-//         if (touch.clientX < window.innerWidth/2){
-//             if(touch.clientY < window.innerHeight/2){
-//                 code = "S"
-//             }
-//             else {code = "W"}
-//         }
-//         else{
-//             if(touch.clientY < window.innerHeight/2){
-//                 code = "("
-//             }
-//             else{
-//                 code = "&"
-//             }
-//         }
-//         key[code] = true
-//     }
-// })
+$(window).ontouchcancel(function(event){
+    var code
+    for(var i in keys){
+        keys[i] = false
+    }
+    for(i = 0; i < event.touches.length; i++){
+        var touch = e.touches[i]
+        if (touch.clientX < window.innerWidth/2){
+            if(touch.clientY < window.innerHeight/2){
+                code = "S"
+            }
+            else {code = "W"}
+        }
+        else{
+            if(touch.clientY < window.innerHeight/2){
+                code = "("
+            }
+            else{
+                code = "&"
+            }
+        }
+        key[code] = true
+    }
+})
 
 function update(){
     if (paused) {setTimeout(update, hz); return}
