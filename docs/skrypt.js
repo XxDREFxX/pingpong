@@ -105,7 +105,7 @@ function deeznuts(event){
         key[code] = true
     }
 }
-$(window).on("touchstart",deeznuts(event))
+$(window).on("touchstart",function(event){
     // alert("start")
     // var code
     //     var touch = e.touches[e.touches.length-1]
@@ -127,10 +127,101 @@ $(window).on("touchstart",deeznuts(event))
     //     }
     //     if (code == null){alert("Błąd")}
     //     key[code] = true
-    
-$(window).on("touchend",deeznuts(event))
-$(window).on("touchmove",deeznuts(event))
-$(window).on("touchcancel",deeznuts(event))
+    var code
+    for(var i in keys){
+        keys[i] = false
+    }
+    for(i = 0; i < event.touches.length; i++){
+        var touch = e.touches[i]
+        if (touch.clientX < window.innerWidth/2){
+            if(touch.clientY < window.innerHeight/2){
+                code = "S"
+            }
+            else {code = "W"}
+        }
+        else{
+            if(touch.clientY < window.innerHeight/2){
+                code = "("
+            }
+            else{
+                code = "&"
+            }
+        }
+        key[code] = true
+    }
+})
+$(window).on("touchend",function(event){
+    var code
+    for(var i in keys){
+        keys[i] = false
+    }
+    for(i = 0; i < event.touches.length; i++){
+        var touch = e.touches[i]
+        if (touch.clientX < window.innerWidth/2){
+            if(touch.clientY < window.innerHeight/2){
+                code = "S"
+            }
+            else {code = "W"}
+        }
+        else{
+            if(touch.clientY < window.innerHeight/2){
+                code = "("
+            }
+            else{
+                code = "&"
+            }
+        }
+        key[code] = true
+    }
+})
+$(window).on("touchmove",function(event){
+    var code
+    for(var i in keys){
+        keys[i] = false
+    }
+    for(i = 0; i < event.touches.length; i++){
+        var touch = e.touches[i]
+        if (touch.clientX < window.innerWidth/2){
+            if(touch.clientY < window.innerHeight/2){
+                code = "S"
+            }
+            else {code = "W"}
+        }
+        else{
+            if(touch.clientY < window.innerHeight/2){
+                code = "("
+            }
+            else{
+                code = "&"
+            }
+        }
+        key[code] = true
+    }
+})
+$(window).on("touchcancel",function(event){
+    var code
+    for(var i in keys){
+        keys[i] = false
+    }
+    for(i = 0; i < event.touches.length; i++){
+        var touch = e.touches[i]
+        if (touch.clientX < window.innerWidth/2){
+            if(touch.clientY < window.innerHeight/2){
+                code = "S"
+            }
+            else {code = "W"}
+        }
+        else{
+            if(touch.clientY < window.innerHeight/2){
+                code = "("
+            }
+            else{
+                code = "&"
+            }
+        }
+        key[code] = true
+    }
+})
 
 function update(){
     if (paused) {setTimeout(update, hz); return}
