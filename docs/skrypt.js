@@ -81,7 +81,7 @@ $(document).keyup(function(event){
     }
     keys[code] = false
 })
-$(document).on("touchstart",function(event){
+$(window).on("touchstart",function(event){
     var code
         var touch = e.touches[e.touches.length]
         if (touch.clientX < window.innerWidth/2){
@@ -101,7 +101,7 @@ $(document).on("touchstart",function(event){
         if (code == null){alert("Błąd")}
         key[code] = true
 })
-$(document).on("touchend",function(event){
+$(window).on("touchend",function(event){
     var code
     for(var i in keys){
         keys[i] = false
@@ -125,7 +125,7 @@ $(document).on("touchend",function(event){
         key[code] = true
     }
 })
-$(document).on("touchmove",function(event){
+$(window).on("touchmove",function(event){
     var code
     for(var i in keys){
         keys[i] = false
