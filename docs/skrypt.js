@@ -82,16 +82,19 @@ $(document).keyup(function(event){
     keys[code] = false
 })
 $(window).on("touchstart",function(event){
+    alert("start")
     var code
         var touch = e.touches[e.touches.length]
-        if (touch.clientX < window.innerWidth/2){
-            if(touch.clientY < window.innerHeight/2){
+        alert(touch.y)
+        alert(touch.Y)
+        if (touch.x < window.innerWidth/2){
+            if(touch.y < window.innerHeight/2){
                 code = "S"
             }
             else {code = "W"}
         }
         else{
-            if(touch.clientY < window.innerHeight/2){
+            if(touch.y < window.innerHeight/2){
                 code = "("
             }
             else{
@@ -108,14 +111,14 @@ $(window).on("touchend",function(event){
     }
     for(i = 0; i < event.touches.length; i++){
         var touch = e.touches[i]
-        if (touch.clientX < window.innerWidth/2){
-            if(touch.clientY < window.innerHeight/2){
+        if (touch.x < window.innerWidth/2){
+            if(touch.y < window.innerHeight/2){
                 code = "S"
             }
             else {code = "W"}
         }
         else{
-            if(touch.clientY < window.innerHeight/2){
+            if(touch.y < window.innerHeight/2){
                 code = "("
             }
             else{
@@ -132,14 +135,14 @@ $(window).on("touchmove",function(event){
     }
     for(i = 0; i < event.touches.length; i++){
         var touch = e.touches[i]
-        if (touch.clientX < window.innerWidth/2){
-            if(touch.clientY < window.innerHeight/2){
+        if (touch.x < window.innerWidth/2){
+            if(touch.y < window.innerHeight/2){
                 code = "S"
             }
             else {code = "W"}
         }
         else{
-            if(touch.clientY < window.innerHeight/2){
+            if(touch.y < window.innerHeight/2){
                 code = "("
             }
             else{
@@ -156,14 +159,14 @@ $(window).on("touchcancel",function(event){
     }
     for(i = 0; i < event.touches.length; i++){
         var touch = e.touches[i]
-        if (touch.clientX < window.innerWidth/2){
-            if(touch.clientY < window.innerHeight/2){
+        if (touch.x < window.innerWidth/2){
+            if(touch.y < window.innerHeight/2){
                 code = "S"
             }
             else {code = "W"}
         }
         else{
-            if(touch.clientY < window.innerHeight/2){
+            if(touch.y < window.innerHeight/2){
                 code = "("
             }
             else{
