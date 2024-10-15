@@ -82,33 +82,9 @@ $(document).keyup(function(event){
     keys[code] = false
 })
 $(window).on("touchstart",function(event){
-    // alert("start")
-    // var code
-    //     var touch = e.touches[e.touches.length-1]
-    //     alert(touch.clienty)
-    //     alert(touch.CLIENTY)
-    //     if (touch.clientx < window.innerWidth/2){
-    //         if(touch.clienty < window.innerHeight/2){
-    //             code = "S"
-    //         }
-    //         else {code = "W"}
-    //     }
-    //     else{
-    //         if(touch.clienty < window.innerHeight/2){
-    //             code = "("
-    //         }
-    //         else{
-    //             code = "&"
-    //         }
-    //     }
-    //     if (code == null){alert("Błąd")}
-    //     key[code] = true
     var code
-    for(var i in keys){
-        keys[i] = false
-    }
-    for(i = 0; i < event.touches.length; i++){
-        var touch = e.touches[i]
+        var touch = e.touches[e.touches.length-1]
+        alert(touch.clientY)
         if (touch.clientX < window.innerWidth/2){
             if(touch.clientY < window.innerHeight/2){
                 code = "S"
@@ -123,8 +99,8 @@ $(window).on("touchstart",function(event){
                 code = "&"
             }
         }
+        if (code == null){alert("Błąd")}
         key[code] = true
-    }
 })
 $(window).on("touchend",function(event){
     var code
