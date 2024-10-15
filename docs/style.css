@@ -1,0 +1,25 @@
+body{
+    background-color: black;
+}
+.walltype{
+    width: 50%;
+}
+.walls{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 99.62%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+#ball{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#wall2{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+}
