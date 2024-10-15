@@ -81,7 +81,7 @@ $(document).keyup(function(event){
     }
     keys[code] = false
 })
-$(document).ontouchstart(function(event){
+$(document).on("touchstart",function(event){
     var code
         var touch = e.touches[e.touches.length]
         if (touch.clientX < window.innerWidth/2){
@@ -101,7 +101,7 @@ $(document).ontouchstart(function(event){
         if (code == null){alert("Błąd")}
         key[code] = true
 })
-$(document).ontouchend(function(event){
+$(document).on("touchend",function(event){
     var code
     for(var i in keys){
         keys[i] = false
@@ -125,7 +125,7 @@ $(document).ontouchend(function(event){
         key[code] = true
     }
 })
-$(document).ontouchmove(function(event){
+$(document).on("touchmove",function(event){
     var code
     for(var i in keys){
         keys[i] = false
@@ -149,30 +149,30 @@ $(document).ontouchmove(function(event){
         key[code] = true
     }
 })
-$(document).ontouchcancel(function(event){
-    var code
-    for(var i in keys){
-        keys[i] = false
-    }
-    for(i = 0; i < event.touches.length; i++){
-        var touch = e.touches[i]
-        if (touch.clientX < window.innerWidth/2){
-            if(touch.clientY < window.innerHeight/2){
-                code = "S"
-            }
-            else {code = "W"}
-        }
-        else{
-            if(touch.clientY < window.innerHeight/2){
-                code = "("
-            }
-            else{
-                code = "&"
-            }
-        }
-        key[code] = true
-    }
-})
+// $(document).ontouchcancel(function(event){
+//     var code
+//     for(var i in keys){
+//         keys[i] = false
+//     }
+//     for(i = 0; i < event.touches.length; i++){
+//         var touch = e.touches[i]
+//         if (touch.clientX < window.innerWidth/2){
+//             if(touch.clientY < window.innerHeight/2){
+//                 code = "S"
+//             }
+//             else {code = "W"}
+//         }
+//         else{
+//             if(touch.clientY < window.innerHeight/2){
+//                 code = "("
+//             }
+//             else{
+//                 code = "&"
+//             }
+//         }
+//         key[code] = true
+//     }
+// })
 
 function update(){
     if (paused) {setTimeout(update, hz); return}
