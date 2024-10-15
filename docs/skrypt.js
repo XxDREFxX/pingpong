@@ -81,44 +81,21 @@ $(document).keyup(function(event){
     }
     keys[code] = false
 })
-$(window).on("touchstart",function(event){
-    alert("start")
-    var code
-        var touch = e.touches[e.touches.length-1]
-        alert(touch.y)
-        alert(touch.Y)
-        if (touch.x < window.innerWidth/2){
-            if(touch.y < window.innerHeight/2){
-                code = "S"
-            }
-            else {code = "W"}
-        }
-        else{
-            if(touch.y < window.innerHeight/2){
-                code = "("
-            }
-            else{
-                code = "&"
-            }
-        }
-        if (code == null){alert("Błąd")}
-        key[code] = true
-})
-$(window).on("touchend",function(event){
+function deeznuts(event){
     var code
     for(var i in keys){
         keys[i] = false
     }
     for(i = 0; i < event.touches.length; i++){
         var touch = e.touches[i]
-        if (touch.x < window.innerWidth/2){
-            if(touch.y < window.innerHeight/2){
+        if (touch.clientX < window.innerWidth/2){
+            if(touch.clientY < window.innerHeight/2){
                 code = "S"
             }
             else {code = "W"}
         }
         else{
-            if(touch.y < window.innerHeight/2){
+            if(touch.clientY < window.innerHeight/2){
                 code = "("
             }
             else{
@@ -127,55 +104,33 @@ $(window).on("touchend",function(event){
         }
         key[code] = true
     }
-})
-$(window).on("touchmove",function(event){
-    var code
-    for(var i in keys){
-        keys[i] = false
-    }
-    for(i = 0; i < event.touches.length; i++){
-        var touch = e.touches[i]
-        if (touch.x < window.innerWidth/2){
-            if(touch.y < window.innerHeight/2){
-                code = "S"
-            }
-            else {code = "W"}
-        }
-        else{
-            if(touch.y < window.innerHeight/2){
-                code = "("
-            }
-            else{
-                code = "&"
-            }
-        }
-        key[code] = true
-    }
-})
-$(window).on("touchcancel",function(event){
-    var code
-    for(var i in keys){
-        keys[i] = false
-    }
-    for(i = 0; i < event.touches.length; i++){
-        var touch = e.touches[i]
-        if (touch.x < window.innerWidth/2){
-            if(touch.y < window.innerHeight/2){
-                code = "S"
-            }
-            else {code = "W"}
-        }
-        else{
-            if(touch.y < window.innerHeight/2){
-                code = "("
-            }
-            else{
-                code = "&"
-            }
-        }
-        key[code] = true
-    }
-})
+}
+$(window).on("touchstart",deeznuts(event))
+    // alert("start")
+    // var code
+    //     var touch = e.touches[e.touches.length-1]
+    //     alert(touch.clienty)
+    //     alert(touch.CLIENTY)
+    //     if (touch.clientx < window.innerWidth/2){
+    //         if(touch.clienty < window.innerHeight/2){
+    //             code = "S"
+    //         }
+    //         else {code = "W"}
+    //     }
+    //     else{
+    //         if(touch.clienty < window.innerHeight/2){
+    //             code = "("
+    //         }
+    //         else{
+    //             code = "&"
+    //         }
+    //     }
+    //     if (code == null){alert("Błąd")}
+    //     key[code] = true
+    
+$(window).on("touchend",deeznuts(event))
+$(window).on("touchmove",deeznuts(event))
+$(window).on("touchcancel",deeznuts(event))
 
 function update(){
     if (paused) {setTimeout(update, hz); return}
