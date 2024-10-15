@@ -149,7 +149,7 @@ $(window).on("touchmove",function(event){
         key[code] = true
     }
 })
-$(window).ontouchcancel(function(event){
+$(window).on("touchcancel",function(event){
     var code
     for(var i in keys){
         keys[i] = false
