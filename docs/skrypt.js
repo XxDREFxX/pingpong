@@ -86,16 +86,16 @@ $(window).on("touchstart",function(event){
         var touch = event.touches[event.touches.length-1]
         if (touch.clientX < window.innerWidth/2){
             if(touch.clientY < window.innerHeight/2){
-                code = "S"
+                code = "W"
             }
-            else {code = "W"}
+            else {code = "S"}
         }
         else{
             if(touch.clientY < window.innerHeight/2){
-                code = "("
+                code = "&"
             }
             else{
-                code = "&"
+                code = "("
             }
         }
         if (code == null){alert("Błąd")}
@@ -110,16 +110,16 @@ $(window).on("touchend",function(event){
         var touch = event.touches[i]
         if (touch.clientX < window.innerWidth/2){
             if(touch.clientY < window.innerHeight/2){
-                code = "S"
+                code = "W"
             }
-            else {code = "W"}
+            else {code = "S"}
         }
         else{
             if(touch.clientY < window.innerHeight/2){
-                code = "("
+                code = "&"
             }
             else{
-                code = "&"
+                code = "("
             }
         }
         keys[code] = true
@@ -134,16 +134,16 @@ $(window).on("touchmove",function(event){
         var touch = e.touches[i]
         if (touch.clientX < window.innerWidth/2){
             if(touch.clientY < window.innerHeight/2){
-                code = "S"
+                code = "W"
             }
-            else {code = "W"}
+            else {code = "S"}
         }
         else{
             if(touch.clientY < window.innerHeight/2){
-                code = "("
+                code = "&"
             }
             else{
-                code = "&"
+                code = "("
             }
         }
         keys[code] = true
@@ -156,18 +156,18 @@ $(window).on("touchcancel",function(event){
     }
     for(i = 0; i < event.touches.length; i++){
         var touch = e.touches[i]
-        if (touch.clientX < window.innerWidth/2){
+       if (touch.clientX < window.innerWidth/2){
             if(touch.clientY < window.innerHeight/2){
-                code = "S"
+                code = "W"
             }
-            else {code = "W"}
+            else {code = "S"}
         }
         else{
             if(touch.clientY < window.innerHeight/2){
-                code = "("
+                code = "&"
             }
             else{
-                code = "&"
+                code = "("
             }
         }
         keys[code] = true
