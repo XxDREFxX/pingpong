@@ -85,18 +85,18 @@ $(window).on("touchstart",function(event){
     var code
         var touch = event.touches[event.touches.length-1]
         if (touch.clientX < window.innerWidth/2){
-            if(touch.clientY < window.innerHeight/4){
+            if(touch.clientY < window.innerHeight/2){return;}
+            if(touch.clientY < window.innerHeight-window.innerHeight/4){
                 code = "W"
             }
-            else if(touch.clientY < window.innerHeight/2) {code = "S"}
+            else if(touch.clientY < window.innerHeight) {code = "S"}
         }
         else{
-            if(touch.clientY < window.innerHeight/4){
+             if(touch.clientY < window.innerHeight/2){return;}
+            if(touch.clientY < window.innerHeight-window.innerHeight/4){
                 code = "&"
             }
-            else if(touch.clientY < window.innerHeight/2){
-                code = "("
-            }
+            else if(touch.clientY < window.innerHeight) {code = "("}
         }
         if (code == null){alert("Błąd")}
         keys[code] = true
@@ -108,19 +108,19 @@ $(window).on("touchend",function(event){
     }
     for(i = 0; i < event.touches.length; i++){
         var touch = event.touches[i]
-        if (touch.clientX < window.innerWidth/2){
-            if(touch.clientY < window.innerHeight/4){
+         if (touch.clientX < window.innerWidth/2){
+            if(touch.clientY < window.innerHeight/2){return;}
+            if(touch.clientY < window.innerHeight-window.innerHeight/4){
                 code = "W"
             }
-            else if(touch.clientY < window.innerHeight/2) {code = "S"}
+            else if(touch.clientY < window.innerHeight) {code = "S"}
         }
         else{
-            if(touch.clientY < window.innerHeight/4){
+             if(touch.clientY < window.innerHeight/2){return;}
+            if(touch.clientY < window.innerHeight-window.innerHeight/4){
                 code = "&"
             }
-            else if(touch.clientY < window.innerHeight/2){
-                code = "("
-            }
+            else if(touch.clientY < window.innerHeight) {code = "("}
         }
         keys[code] = true
     }
@@ -132,19 +132,19 @@ $(window).on("touchmove",function(event){
     }
     for(i = 0; i < event.touches.length; i++){
         var touch = e.touches[i]
-       if (touch.clientX < window.innerWidth/2){
-            if(touch.clientY < window.innerHeight/4){
+        if (touch.clientX < window.innerWidth/2){
+            if(touch.clientY < window.innerHeight/2){return;}
+            if(touch.clientY < window.innerHeight-window.innerHeight/4){
                 code = "W"
             }
-            else if(touch.clientY < window.innerHeight/2) {code = "S"}
+            else if(touch.clientY < window.innerHeight) {code = "S"}
         }
         else{
-            if(touch.clientY < window.innerHeight/4){
+             if(touch.clientY < window.innerHeight/2){return;}
+            if(touch.clientY < window.innerHeight-window.innerHeight/4){
                 code = "&"
             }
-            else if(touch.clientY < window.innerHeight/2){
-                code = "("
-            }
+            else if(touch.clientY < window.innerHeight) {code = "("}
         }
         keys[code] = true
     }
@@ -156,19 +156,19 @@ $(window).on("touchcancel",function(event){
     }
     for(i = 0; i < event.touches.length; i++){
         var touch = e.touches[i]
-       if (touch.clientX < window.innerWidth/2){
-            if(touch.clientY < window.innerHeight/4){
+        if (touch.clientX < window.innerWidth/2){
+            if(touch.clientY < window.innerHeight/2){return;}
+            if(touch.clientY < window.innerHeight-window.innerHeight/4){
                 code = "W"
             }
-            else if(touch.clientY < window.innerHeight/2) {code = "S"}
+            else if(touch.clientY < window.innerHeight) {code = "S"}
         }
         else{
-            if(touch.clientY < window.innerHeight/4){
+             if(touch.clientY < window.innerHeight/2){return;}
+            if(touch.clientY < window.innerHeight-window.innerHeight/4){
                 code = "&"
             }
-            else if(touch.clientY < window.innerHeight/2){
-                code = "("
-            }
+            else if(touch.clientY < window.innerHeight) {code = "("}
         }
         keys[code] = true
     }
