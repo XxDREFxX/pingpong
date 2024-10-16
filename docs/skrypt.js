@@ -85,16 +85,16 @@ $(window).on("touchstart",function(event){
     var code
         var touch = event.touches[event.touches.length-1]
         if (touch.clientX < window.innerWidth/2){
-            if(touch.clientY < window.innerHeight/2){
+            if(touch.clientY < window.innerHeight/4){
                 code = "W"
             }
-            else {code = "S"}
+            else if(touch.clientY < window.innerHeight/2) {code = "S"}
         }
         else{
-            if(touch.clientY < window.innerHeight/2){
+            if(touch.clientY < window.innerHeight/4){
                 code = "&"
             }
-            else{
+            else if(touch.clientY < window.innerHeight/2){
                 code = "("
             }
         }
@@ -109,16 +109,16 @@ $(window).on("touchend",function(event){
     for(i = 0; i < event.touches.length; i++){
         var touch = event.touches[i]
         if (touch.clientX < window.innerWidth/2){
-            if(touch.clientY < window.innerHeight/2){
+            if(touch.clientY < window.innerHeight/4){
                 code = "W"
             }
-            else {code = "S"}
+            else if(touch.clientY < window.innerHeight/2) {code = "S"}
         }
         else{
-            if(touch.clientY < window.innerHeight/2){
+            if(touch.clientY < window.innerHeight/4){
                 code = "&"
             }
-            else{
+            else if(touch.clientY < window.innerHeight/2){
                 code = "("
             }
         }
@@ -132,17 +132,17 @@ $(window).on("touchmove",function(event){
     }
     for(i = 0; i < event.touches.length; i++){
         var touch = e.touches[i]
-        if (touch.clientX < window.innerWidth/2){
-            if(touch.clientY < window.innerHeight/2){
+       if (touch.clientX < window.innerWidth/2){
+            if(touch.clientY < window.innerHeight/4){
                 code = "W"
             }
-            else {code = "S"}
+            else if(touch.clientY < window.innerHeight/2) {code = "S"}
         }
         else{
-            if(touch.clientY < window.innerHeight/2){
+            if(touch.clientY < window.innerHeight/4){
                 code = "&"
             }
-            else{
+            else if(touch.clientY < window.innerHeight/2){
                 code = "("
             }
         }
@@ -157,16 +157,16 @@ $(window).on("touchcancel",function(event){
     for(i = 0; i < event.touches.length; i++){
         var touch = e.touches[i]
        if (touch.clientX < window.innerWidth/2){
-            if(touch.clientY < window.innerHeight/2){
+            if(touch.clientY < window.innerHeight/4){
                 code = "W"
             }
-            else {code = "S"}
+            else if(touch.clientY < window.innerHeight/2) {code = "S"}
         }
         else{
-            if(touch.clientY < window.innerHeight/2){
+            if(touch.clientY < window.innerHeight/4){
                 code = "&"
             }
-            else{
+            else if(touch.clientY < window.innerHeight/2){
                 code = "("
             }
         }
