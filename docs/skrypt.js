@@ -99,7 +99,7 @@ $(window).on("touchstart",function(event){
             }
         }
         if (code == null){alert("Błąd")}
-        key[code] = true
+        keys[code] = true
 })
 $(window).on("touchend",function(event){
     var code
@@ -107,7 +107,7 @@ $(window).on("touchend",function(event){
         keys[i] = false
     }
     for(i = 0; i < event.touches.length; i++){
-        var touch = e.touches[i]
+        var touch = event.touches[i]
         if (touch.clientX < window.innerWidth/2){
             if(touch.clientY < window.innerHeight/2){
                 code = "S"
@@ -122,7 +122,7 @@ $(window).on("touchend",function(event){
                 code = "&"
             }
         }
-        key[code] = true
+        keys[code] = true
     }
 })
 $(window).on("touchmove",function(event){
@@ -146,7 +146,7 @@ $(window).on("touchmove",function(event){
                 code = "&"
             }
         }
-        key[code] = true
+        keys[code] = true
     }
 })
 $(window).on("touchcancel",function(event){
@@ -170,7 +170,7 @@ $(window).on("touchcancel",function(event){
                 code = "&"
             }
         }
-        key[code] = true
+        keys[code] = true
     }
 })
 
